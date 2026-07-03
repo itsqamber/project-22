@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Digital Toolkit</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #172033;
+      --muted: #667085;
+      --panel: #ffffff;
+      --line: #dbe3ef;
+      --primary: #2563eb;
+      --accent: #14b8a6;
+      --shadow: 0 22px 60px rgba(23, 32, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(20, 184, 166, 0.16), transparent 30%),
+        radial-gradient(circle at 88% 16%, rgba(37, 99, 235, 0.18), transparent 28%),
+        linear-gradient(135deg, #f8fafc 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px clamp(18px, 5vw, 64px);
+      background: rgba(248, 250, 252, 0.86);
+      border-bottom: 1px solid rgba(219, 227, 239, 0.8);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .links a:hover,
+    .links .active {
+      color: var(--primary);
+      background: #eaf1ff;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(42px, 7vw, 82px) clamp(18px, 5vw, 64px);
+    }
+
+    .header {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 14px 0 18px;
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .card {
+      min-height: 230px;
+      padding: 26px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      background: #172033;
+      color: white;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 34px;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.45;
+    }
+
+    @media (max-width: 820px) {
+      .content,
+      .wide {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="home.html">
+      <span class="brand-mark">D</span>
+      <span>Digital Toolkit</span>
+    </a>
+    <div class="links">
+      <a href="home.html">Home</a>
+      <a href="introduction.html">Introduction</a>
+      <a class="active" href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">Calculator</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="header">
+      <span class="eyebrow">About the project</span>
+      <h1>Professional pages with practical structure.</h1>
+      <p class="lead">Digital Toolkit is a compact website designed to feel polished without becoming complicated. Each page has a clear role, consistent styling, and simple navigation.</p>
+    </section>
+
+    <section class="content">
+      <article class="card">
+        <h2>Design Goal</h2>
+        <p>The site uses strong spacing, modern cards, subtle shadows, and a clean color system to create a professional first impression while keeping the experience simple.</p>
+      </article>
+      <article class="card">
+        <h2>Build Goal</h2>
+        <p>Every page is a standalone HTML file, so the site can be opened directly from the folder without installing software or running a server.</p>
+      </article>
+      <article class="card wide">
+        <div class="stat">
+          <strong>5</strong>
+          <span>Connected pages including the calculator.</span>
+        </div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span>Self-contained HTML, CSS, and JavaScript.</span>
+        </div>
+        <div class="stat">
+          <strong>Fast</strong>
+          <span>Lightweight files built for quick loading.</span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

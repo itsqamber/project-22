@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction | Digital Toolkit</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --ink: #172033;
+      --muted: #667085;
+      --panel: #ffffff;
+      --line: #dbe3ef;
+      --primary: #2563eb;
+      --accent: #14b8a6;
+      --shadow: 0 22px 60px rgba(23, 32, 51, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(20, 184, 166, 0.16), transparent 30%),
+        radial-gradient(circle at 88% 20%, rgba(37, 99, 235, 0.18), transparent 28%),
+        linear-gradient(135deg, #f8fafc 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px clamp(18px, 5vw, 64px);
+      background: rgba(248, 250, 252, 0.86);
+      border-bottom: 1px solid rgba(219, 227, 239, 0.8);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .links a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .links a:hover,
+    .links .active {
+      color: var(--primary);
+      background: #eaf1ff;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(42px, 7vw, 82px) clamp(18px, 5vw, 64px);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 14px 0 18px;
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 8px;
+      background: #f7f9fc;
+      border: 1px solid var(--line);
+    }
+
+    .number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: white;
+      font-weight: 850;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+    }
+
+    .step h2 {
+      margin: 0 0 6px;
+      font-size: 20px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cta {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), #1d4ed8);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+    }
+
+    @media (max-width: 860px) {
+      .intro {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <a class="brand" href="home.html">
+      <span class="brand-mark">D</span>
+      <span>Digital Toolkit</span>
+    </a>
+    <div class="links">
+      <a href="home.html">Home</a>
+      <a class="active" href="introduction.html">Introduction</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">Calculator</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="intro">
+      <div>
+        <span class="eyebrow">Introduction</span>
+        <h1>A simple site with a sharp purpose.</h1>
+        <p class="lead">This website gives visitors a clean path through the main pages and a practical calculator. It is designed to look modern, load quickly, and stay easy to use on any screen size.</p>
+        <div class="cta">
+          <a class="button" href="about.html">Learn More</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="steps">
+          <article class="step">
+            <span class="number">01</span>
+            <div>
+              <h2>Start on Home</h2>
+              <p>The home page introduces the whole project and links visitors to the main sections.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="number">02</span>
+            <div>
+              <h2>Read the Details</h2>
+              <p>The introduction and about pages explain the idea, structure, and design approach.</p>
+            </div>
+          </article>
+          <article class="step">
+            <span class="number">03</span>
+            <div>
+              <h2>Use the Calculator</h2>
+              <p>The calculator page provides a polished tool with button controls and keyboard input.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
